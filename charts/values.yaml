@@ -3,12 +3,12 @@
 # Declare variables to be passed into your templates.
 
 
-appName: go-sample
+appName: go-sample-app
 deploymentName: go-sample-deployment
 replicaCount: 1
 
 image:
-  repository: go-sample
+  repository: melsheikh91/go-sample
   pullPolicy: IfNotPresent
   tag: "latest"
 
