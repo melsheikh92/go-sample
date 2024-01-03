@@ -24,4 +24,4 @@ TAG_NAME="v$NEW_VERSION"
 git tag $TAG_NAME
 
 # Push changes to the remote repository
-git push origin main --tags
+git push origin main

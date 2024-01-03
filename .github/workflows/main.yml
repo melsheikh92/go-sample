@@ -47,6 +47,6 @@ jobs:
         docker push melsheikh91/go-sample:$NEW_VERSION
     - name: Bump version and commit
       run: |
-        chmod u+x ./bump_version.sh
-        ./bump_version.sh
+        chmod u+x ./ci/bump_version.sh
+        ./ci/bump_version.sh
 
