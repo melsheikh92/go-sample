@@ -1,0 +1,44 @@
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v1
+
+    - name: Set up Git
+      run: |
+        git config user.email "melsheikh92@gmail.com"
+        git config user.name "GitHub Actions"
+
+    - name: Bump version and commit
+      run: |
+        chmod u+x ./bump_version.sh
+        ./bump_version.sh
+
+    - name: Build and push Docker image
+      run: |
+        docker buildx create --use
+        docker buildx inspect --bootstrap
+        docker buildx build --platform linux/amd64,linux/arm64 -t melsheikh91/go-sample:latest -t melsheikh91/go-sample:$NEW_VERSION .
+
+    - name: Login to Docker Hub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: Push Docker image to Docker Hub
+      run: |
+        docker push melsheikh91/go-sample:latest
+        docker push melsheikh91/go-sample:$NEW_VERSION
