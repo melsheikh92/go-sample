@@ -25,6 +25,7 @@ jobs:
       run: |
         chmod u+x ./bump_version.sh
         ./bump_version.sh
+        NEW_VERSION=$(cat appversion)
 
     - name: Build and push Docker image
       run: |
