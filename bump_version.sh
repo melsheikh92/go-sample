@@ -18,3 +18,7 @@ sed -i "s/\(image:\s*tag:\s*\)\"[^\"]*\"/\1\"$NEW_VERSION\"/" $YAML_FILE
 # Commit the changes
 git add appversion $YAML_FILE
 git commit -m "Bump version to $NEW_VERSION"
+
+# Tag the commit
+TAG_NAME="v$NEW_VERSION"
+git tag $TAG_NAME
