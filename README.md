@@ -26,7 +26,6 @@ To run the application locally using Docker Compose:
 
 `docker-compose up`  
  
-
 ### **Building Docker Image**
 
 `helm install/upgrade <release-name> charts/`
