@@ -1,4 +1,4 @@
-## Go mux CI/DI sample
+## Go mux CI/CD sample
 
 ## **Overview**
 
