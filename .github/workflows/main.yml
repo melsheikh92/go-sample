@@ -23,6 +23,7 @@ jobs:
 
     - name: Bump version and commit
       run: |
+        chmod u+x ./bump_version.sh
         ./bump_version.sh
 
     - name: Build and push Docker image
