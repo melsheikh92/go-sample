@@ -1,0 +1,18 @@
+project: default
+source:
+  repoURL: 'https://github.com/melsheikh92/go-sample'
+  path: charts
+  targetRevision: HEAD
+  helm:
+    valueFiles:
+      - values.yaml
+destination:
+  server: 'https://kubernetes.default.svc'
+  namespace: go-sample-namespace
+syncPolicy:
+  automated:
+    prune: true
+    selfHeal: true
+  syncOptions:
+    - CreateNamespace=true
+    - PrunePropagationPolicy=foreground
