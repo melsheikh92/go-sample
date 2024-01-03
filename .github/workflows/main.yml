@@ -42,5 +42,6 @@ jobs:
     - name: Push Docker image to Docker Hub
       run: |
         NEW_VERSION=$(cat appversion)
+        docker image ls
         docker push melsheikh91/go-sample:latest
         docker push melsheikh91/go-sample:$NEW_VERSION
