@@ -1,4 +1,4 @@
-## Go mux CI/CD sample
+## Go mux CI/CD sample (Github actions + Docker + Helm + ArgoCD)
 
 ## **Overview**
 
