@@ -10,12 +10,12 @@ This repository contains a GoLang web server service implemented using the **mux
 *   **main.go**:  main application server code.
 *   **Dockerfile**: Dockerfile for building the application image.
 *   **docker-compose.yaml**: Docker Compose file for local development.
-*   **charts/**: Helm chart folder for deployment.
+*   **charts**: Helm chart folder for deployment.
     *   **values.yaml**: Helm chart values file with an image tag and other configuration.
 *   **Kubernetes**: Kubernetes deployment files.
     *   **deployment.yaml**: Deployment file for Kubernetes.
     *   **service.yaml**: Service file with NodePort configuration.
-*   **argocd/**: Argo CD folder.
+*   **argocd**: Argo CD folder.
     *   **application.yaml**: Argo CD application file for importing the application.
 
 ## **Usage**
