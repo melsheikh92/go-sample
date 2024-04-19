@@ -10,7 +10,7 @@ replicaCount: 1
 image:
   repository: melsheikh91/go-sample
   pullPolicy: IfNotPresent
-  tag: "1.7"
+  tag: "1.8"
 
 service:
   name: go-sample-service
